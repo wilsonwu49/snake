@@ -1,20 +1,21 @@
 # Snake Game on ICEUP5K (VHDL)
 
 ## Description
-This project implements the classic **Snake** arcade game using **VHDL** on the **ICEUP5K (iCE40 UltraPlus)** FPGA. The game is implemented entirely in hardware without a processor. VGA output is used for display, and push buttons or GPIO inputs are used to control the snake’s movement.
-
-The design uses synchronous logic with a system clock and a divided game tick to control snake movement independently from VGA refresh timing.
+This project implements the classic Snake arcade game using VHDL on the ICEUP5K (iCE40 UltraPlus) FPGA. The game is implemented entirely in hardware without a processor. VGA output is used for display, and push buttons or GPIO inputs are used to control the snake’s movement.
 
 ---
 
 ## Features
-* Fully hardware-based implementation in VHDL
-* VGA video output (e.g., 640×480 @ 60 Hz)
-* Grid-based snake movement
-* Clock-divider-based game timing
-* Snake growth and food consumption
-* Wall and self-collision detection
-* Game-over and reset functionality
+* Fully hardware-based Snake game implemented entirely in VHDL
+* VGA video output at 640×480 pixels, 60 Hz refresh rate, with HSYNC and VSYNC timing
+* Grid-based snake movement with 16×16 pixel cells
+* Game tick derived from 12 MHz system clock divided down to ~5 Hz for consistent snake speed
+* Snake growth: body stored in register array
+* Food spawning at random grid locations
+* Collision detection with walls and self
+* Push-button or GPIO input for four directions
+* Game-over and reset logic fully implemented in FSM
+
 
 ---
 
@@ -22,12 +23,11 @@ The design uses synchronous logic with a system clock and a divided game tick to
 * ICEUP5K FPGA development board
 * **Lattice Radiant**
 * VGA monitor
-* Windows 10 / 11
 
 ---
 
 ## Authors
-* **Wilson Wu**
+* Wilson Wu
 * Lawrence Qiu
 * Devon Kumar
 * William Cordray
@@ -35,4 +35,4 @@ The design uses synchronous logic with a system clock and a divided game tick to
 ---
 
 ## License
-This project is licensed under the **MIT License**.
+This project is licensed under the MIT License.
